@@ -12,6 +12,7 @@ import { environment as env } from 'src/environments/environment';
 export class CommandCheckComponent implements OnInit {
   products:Product[]=[];
   public backendUrl = (!window.location.host.includes('localhost')?prod.baseurl: env.baseurl);
+  public frontUrl = (!window.location.host.includes('localhost')?prod.frontUrl: env.frontUrl);
 
   command:any={}
   total:number=0
