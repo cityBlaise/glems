@@ -108,7 +108,7 @@ export class WishListService {
 
   public getArticle(page:number){
     console.log('get articles ')
-    this.http.get<any>(this.backendUrl+page).subscribe(  res=>{
+    this.http.get<any>(this.backendUrl+"products/"+page).subscribe(  res=>{
       this.articles =   res.data
       console.log('get articles '+res.data)
       this.articleSubject.next(this.articles)
