@@ -1,0 +1,46 @@
+
+<div class="shop-cart" [ngClass]="active? 'active': 'disabled'">
+  <img (click)="close()" class="back" src="../../../assets/images/icons/arrow-back.svg" alt="">
+  <div class="header">
+      <span class="title">Mon panier</span>
+      <span class="cart-btn">
+        <img src="./../../../assets/images/icons/bag-handle-outline.svg" alt="">
+    </span>
+  </div>
+  <div class="items-wrapper">
+      <div class="item" *ngFor="let product of products">
+          <button class="btn-remove" (click)="handlecart($event,product)"></button>
+          <div class="img">
+              <img  width="100" height="100" src="{{product.images[0]}}" alt="">
+          </div>
+          <div class="description">
+              <div class="name-size">
+                  <div class="name">{{product.productName}}</div>
+                  <div class="size">size M</div>
+              </div>
+              <div class="price"> {{product.price}} xaf</div>
+          </div>
+      </div>
+
+  </div>
+  <div class="total-order">
+    <button *ngIf="products.length>0"  class="order"  (click)="order()">
+       commander
+    </button>
+    <button *ngIf="products.length<=0"  class="order disabled" (click)="doNothing($event)">
+       commander
+    </button>
+    <div class="total-price">
+      <div class="nombre-total">
+          <span>nombre de pièces</span>
+          <span class="number">{{products.length}}</span>
+      </div>
+      <div class="prix-total">
+          <span>montant total</span>
+          <div class="total">{{total}} xaf</div>
+      </div>
+  </div>
+
+  </div>
+
+</div>

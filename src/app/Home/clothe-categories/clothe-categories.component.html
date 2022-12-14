@@ -1,0 +1,14 @@
+<div class="categorie-container ">
+    <div class="categorie-item" *ngFor="let item of categorieItem">
+        <div class="img">
+            <img src="./assets/images/clothes-categories/{{item._id | lowercase}}.webp" width="50" height="50" alt="">
+        </div>
+        <div class="desc">
+            <div class="categorie-amount">
+                <span>{{item._id | titlecase }}</span>
+                <span>({{item.count}})</span>
+            </div>
+            <a (click)="getProductByCategorie(item._id)">show all</a>
+        </div>
+    </div>
+</div>

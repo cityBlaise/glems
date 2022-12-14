@@ -1,0 +1,19 @@
+<div class="mobile-bottom-menu">
+  <!-- <button class="action-btn" disabled>
+    <img src="./../../../assets/images/icons/receipt-outline.svg" alt="">
+  </button> -->
+  <button class="action-btn" (click)=handleshopcart()>
+    <img src="./../../../assets/images/icons/bag-handle-outline.svg" alt="">
+    <span *ngIf="cartItemAmount" class="count">{{cartItemAmount}}</span>
+  </button>
+  <button class="action-btn" routerLink="/home" routerLinkActive="active">
+    <img src="./../../../assets/images/icons/home-outline.svg" alt="">
+  </button>
+  <!-- <button class="action-btn" disabled>
+    <img src="./../../../assets/images/icons/heart-outline.svg" alt="">
+    <span style="display: none;" class="count">0</span>
+  </button> -->
+  <button class="action-btn" (click)=handlesidebar()>
+    <img src="./../../../assets/images/icons/grid-outline.svg" alt="">
+  </button>
+</div>

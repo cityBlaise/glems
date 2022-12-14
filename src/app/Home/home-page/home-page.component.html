@@ -1,0 +1,44 @@
+<app-header *ngIf="products"></app-header>
+
+<div class="container">
+
+  <app-banner></app-banner>
+  <app-clothe-categories></app-clothe-categories>
+  <app-title title="en vente" ></app-title>
+  <div class="product-container">
+
+
+
+
+    <app-product-card *ngFor="let item of products" [product]=item ></app-product-card >
+  </div>
+</div>
+<app-pagination ></app-pagination>
+
+<app-footer></app-footer>
+<showproduct></showproduct>
+<div class="loader active" id="loader">
+  <div class="loading">
+    <img src="./../../../assets/images/android-chrome-192x192.png" alt="">
+    <div class="text">
+      <span>loading</span>
+      <img src="../../../assets/images/loader.gif" alt="">
+    </div>
+  </div>
+</div>
+
+
+<div class="loader" id="loader2">
+  <div class="loading">
+    <img src="./../../../assets/images/android-chrome-192x192.png" alt="">
+    <div class="text">
+      <span>loading</span>
+      <img src="../../../assets/images/loader.gif" alt="">
+    </div>
+  </div>
+</div>
+
+
+<div id="gotop" (click)="gotop()">
+  <img src="./../../../assets/images/icons/chevron-up-outline.svg" alt="">
+</div>

@@ -1,0 +1,40 @@
+<div class="product-item " (click)="showProduct()" *ngIf="product">
+    <div class="imgs">
+        <img class="default" src="{{product.images[0]}}"  alt="">
+        <img class="hover" src="{{product.images[1]}}"   alt="">
+    </div>
+    <div class="actions">
+          <button    class="action-btn" (click)="handlecart($event)" [ngClass]="{'added': incart}">
+            <img src="./../../../assets/images/icons/bag-handle-outline.svg" alt="" *ngIf="!incart">
+            <img src="./../../../assets/images/icons/checkmark-done-outline.svg" alt="" *ngIf="incart">
+          </button>
+      <button class="action-btn" (click)="stopProp($event)" >
+            <img src="./../../../assets/images/icons/arrow-forward-outline.svg" alt=""  >
+          </button>
+    </div>
+    <div class="description">
+        <div class="left">
+            <div class="categorie">{{product.productCategorie}}</div>
+            <div class="name">
+                {{product.productName}}
+            </div>
+            <div class="size">
+                <span>size</span>
+                <ul>
+                    <li *ngFor="let size of product.sizes">{{size | uppercase}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="price">
+            {{product.price}}<span>xaf</span>
+        </div>
+    </div>
+    <div class="colors">
+        <span *ngFor="let color of product.colors" [style.background-color]="color"></span>
+    </div>
+
+    <div class="status">
+      en stock
+    </div>
+</div>

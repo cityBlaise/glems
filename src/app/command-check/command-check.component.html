@@ -1,0 +1,55 @@
+
+<div class="shop-cart" *ngIf="products">
+  <!-- <img (click)="close()" class="back" src="../../../assets/images/icons/arrow-back.svg" alt=""> -->
+  <div class="header">
+      <span class="title">Commande </span>
+      <span class="cart-btn">
+        <img src="./../../../assets/images/icons/receipt-outline.svg" alt="">
+    </span>
+    <div>{{command.commandId}}</div>
+  </div>
+  <div class="items-wrapper">
+      <div class="item" *ngFor="let product of products">
+          <div class="img">
+              <img  width="100" height="100" src="./../../.{{product.images[0]}}" alt="">
+          </div>
+          <div class="description">
+              <div class="name-size">
+                  <div class="name">{{product.productName}}</div>
+                  <div class="size">size M</div>
+              </div>
+              <div class="price"> {{product.price}} xaf</div>
+          </div>
+      </div>
+
+  </div>
+  <div class="total-order">
+    <div class="total-price">
+      <div class="nombre-total">
+          <span>nombre de pièces</span>
+          <span class="number">{{products.length}}</span>
+      </div>
+      <div class="prix-total">
+          <span>montant total</span>
+          <div class="total">{{total}} xaf</div>
+      </div>
+  </div>
+  <div >
+    <a class="wha"
+    href="https://api.whatsapp.com/send/?phone=237696173340&text=https://glems.herokuapp.com/command/{{command.commandId}}"
+    target="_blank">
+    <img src="../../assets/images/icons/icons8-whatsapp.svg" alt="">
+    </a>
+  </div>
+  </div>
+
+</div>
+<div class="loader active" [ngClass]="{disabled:products.length>0}">
+  <div class="loading">
+    <img src="./../../assets/images/android-chrome-192x192.png" alt="">
+    <div class="text">
+      <span>loading</span>
+      <img src="../../assets/images/loader.gif" alt="">
+    </div>
+  </div>
+</div>

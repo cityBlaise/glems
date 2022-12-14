@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+ion-icon,
+button,
+a {
+  display: block;
+}
+
+span {
+  display: inline-block;
+}
+
+
+
+input {
+  display: block;
+  width: 100%;
+  font: inherit;
+}
+
+input::placeholder {
+  font: inherit;
+}
+
+
+/**
+   * scrollbar style
+   */
+:root{
+  --pink: rgb(255, 156, 217);
+  --sambatsfont: 'sambats';
+  --border: rgb(230, 230, 230);
+  --pinktext:rgb(254, 118, 118);
+  --backgray:rgb(201, 201, 201);
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+  border-left: 1px solid ghostwhite;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
+
+
+*::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgb(15 34 39);
+}
+
+/*-----------------------------------*\
+  #TYPOGRAPHIE
+\*-----------------------------------*/
+
+@font-face {
+  font-family: 'sambats';
+  src: url('./assets/fonts/sambats/sambats-515yl-webfont.woff2') format('woff2'),
+       url('./assets/fonts/sambats/sambats-515yl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+font-family: 'jully_juliaregular';
+src: url('./assets/fonts/julia/jully-julia-webfont.woff2') format('woff2'),
+     url('./assets/fonts/julia/jully-julia-webfont.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'poppinregular';
+  src: url('./assets/fonts/poppins/poppins-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/poppins/poppins-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'playlistscript';
+  src: url('./assets/fonts/playlist/fontsfree-net-playlistscript-webfont.woff2') format('woff2'),
+       url('./assets/fonts/playlist/fontsfree-net-playlistscript-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+#------------
+#------------
+
+
+html{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  min-width: 315px;
+  scroll-behavior: smooth !important;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: poppinregular;
+   min-width: 315px;
+   background-image: url('./assets/images/icons/13757659_5335769.webp') !important;
+  background-repeat: repeat-y;
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 12px;
+  gap: 10px;
+  padding-top: 0px;
+}
+
+
+.fixed{
+  overflow: hidden;
+}
+
+

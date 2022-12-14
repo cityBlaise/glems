@@ -1,0 +1,22 @@
+.title{
+    margin-block: 25px;
+    font-size: 17px;
+    padding-block: 5px;
+    color: white;
+    position: relative;
+    padding-left: 10px;
+    font-family: var(--sambatsfont);
+    letter-spacing: 4px;
+    &::after{
+        content: ' ';
+        height: 3px;
+        background-color:  var(--pink);
+        bottom: -3.5px;
+        width: 50%;
+        position: absolute;
+        border-radius: 10px;
+        left: 10px;
+    }
+}
+
+

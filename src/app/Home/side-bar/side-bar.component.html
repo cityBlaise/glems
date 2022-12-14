@@ -1,0 +1,22 @@
+<div class="overlay" [ngClass]="{'active':active}" (click)=close()>
+  <div class="mobile-sidebar" data-mobile-sidebar (click)=stopProp($event)>
+    <div class="header">
+        <div class="title">Menu</div>
+        <button data-sidebar-menu-close-btn (click)=close()></button>
+    </div>
+    <div class="wrapper">
+        <h2>categorie</h2>
+        <ul class="content">
+            <li *ngFor="let item of categorieItem"><button><span class="name">{{item._id | lowercase}}</span><span class="number">( {{item.count}} )</span></button></li>
+        </ul>
+    </div>
+    <div class="social-media-wrapper">
+        <div >rejoins nous</div>
+        <div class="social-media">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100083993751208">facebook</a>
+            <a target="_blank" href="https://www.tiktok.com/@glem.s_collection">tik tok</a>
+            <a target="_blank" href="https://chat.whatsapp.com/DkdamR1nsZJ6tRomP8c8pg">whatsapp</a>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.paggination ul{
+  justify-content: center;
+  gap: 15px;
+  display: flex;
+  margin-bottom: 15px;
+  width: 86%;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+.paggination ul li{
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.59);
+  border: solid 1px ;
+  border: solid 1px var(--border);
+}
+
+.paggination ul li:active{
+  box-shadow: 0px 0px 6px 0px rgba(255, 131, 199, 0.634);
+  background-color: rgba(255, 131, 199, 0.634);
+  border-color: transparent;
+  color: white;
+  transition: .2s ease;
+}
+.paggination ul button{
+  color: inherit;
+  padding: 10px 15px;
+  font-family: sambats;
+  font-size: .8rem;
+  /* background-color: rgb(234, 234, 234); */
+}
+
+
+@media (min-width: 600px){
+  .paggination ul{
+    justify-content: center;
+  }
+}

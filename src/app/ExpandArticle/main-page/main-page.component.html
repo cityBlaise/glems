@@ -1,0 +1,39 @@
+<div *ngIf="product" class="overlay" [ngClass]="active? 'active': 'disabled'" (click)="close($event)">
+  <div class="product-container" (click)="doNothing($event)">
+    <!-- <button class="close" (click)="close($event)"></button> -->
+    <div class="imgs">
+      <img   src="{{ image}}" alt="" *ngFor="let image of product.images"/>
+    </div>
+    <div class="description">
+      <div class="left">
+        <div class="categorie">{{ product.productCategorie }}</div>
+        <div class="name">
+          {{ product.productName }}
+        </div>
+        <div class="size">
+          <span>size</span>
+          <ul>
+            <li *ngFor="let size of product.sizes">{{ size | uppercase }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="price">{{ product.price }}<span>xaf</span></div>
+    </div>
+    <div class="colors-action">
+
+      <div class="colors">
+        <span
+          *ngFor="let color of product.colors"
+          [style.background-color]="color"
+        ></span>
+      </div>
+      <div class="action">
+        <button [ngClass]="{'added': incart}" (click)="handlecart($event)">
+          <img *ngIf="!incart" src="./../../../assets/images/icons/bag-handle-outline.svg" alt="" >
+          <img *ngIf="incart" src="./../../../assets/images/icons/checkmark-done-outline.svg" alt="" >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
