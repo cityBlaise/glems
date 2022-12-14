@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
+import { environment as env } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +39,7 @@ export class WishListService {
  public productsLoaderObservable;
  productLoader:boolean;
 
+ public backendUrl = (!window.location.host.includes('localhost')?environment.baseurl: env.baseurl);
  resetStock(){
    this.stocklist=[]
    localStorage.setItem('cardshop1',JSON.stringify(this.stocklist))
@@ -96,7 +99,7 @@ export class WishListService {
 
      //product by page
 
-     this.http.get<any>('https://glems-backend.herokuapp.com/products/1').subscribe(res=>{
+     this.http.get<any>(this.backendUrl+'products/1').subscribe(res=>{
       this.articles = res.data
       this.articleSubject.next(this.articles)
 
@@ -105,7 +108,7 @@ export class WishListService {
 
   public getArticle(page:number){
     console.log('get articles ')
-    this.http.get<any>('https://glems-backend.herokuapp.com/products/'+page).subscribe(  res=>{
+    this.http.get<any>(this.backendUrl+page).subscribe(  res=>{
       this.articles =   res.data
       console.log('get articles '+res.data)
       this.articleSubject.next(this.articles)
