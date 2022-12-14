@@ -49,7 +49,7 @@
 .imgs img{
   scroll-snap-align: start;
   transition: none;
-  width: 100%;
+  max-width: 100%;
   flex: 1 0 100%;
 }
 
