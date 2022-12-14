@@ -17,7 +17,7 @@ export class PaginationComponent implements OnInit {
   constructor( private service: WishListService, private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>(this.backendUrl+'/amount').subscribe(res=>{
+    this.http.get<any>(this.backendUrl+'products/amount').subscribe(res=>{
       this.pages =Number(res)
       this.pages = Math.round(this.pages/10)
     })
