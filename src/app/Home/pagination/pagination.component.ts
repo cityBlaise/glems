@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WishListService } from 'src/app/WhishList-Service/wish-list.service';
 
+import { environment as prod } from 'src/environments/environment.prod';
+import { environment as env } from 'src/environments/environment';
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
@@ -10,10 +12,12 @@ import { WishListService } from 'src/app/WhishList-Service/wish-list.service';
 })
 export class PaginationComponent implements OnInit {
   pages:number =0;
+  public backendUrl = (!window.location.host.includes('localhost')?prod.baseurl: env.baseurl);
+
   constructor( private service: WishListService, private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://glems-backend.herokuapp.com/products/amount').subscribe(res=>{
+    this.http.get<any>(this.backendUrl+'/amount').subscribe(res=>{
       this.pages =Number(res)
       this.pages = Math.round(this.pages/10)
     })

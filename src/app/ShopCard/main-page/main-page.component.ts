@@ -4,7 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import Product from 'src/app/command-check/product';
-
+import { environment as prod } from 'src/environments/environment.prod';
+import { environment as env } from 'src/environments/environment';
 @Component({
   selector: 'shopcart',
   templateUrl: './main-page.component.html',
@@ -14,6 +15,8 @@ export class MainPageComponent implements OnInit {
   total:number=0
   products:any[]=[];
    public active:boolean=false;
+  public backendUrl = (!window.location.host.includes('localhost')?prod.baseurl: env.baseurl);
+
   constructor(
     private route: Router,private cardList:WishListService, private http:HttpClient) {
 
@@ -69,7 +72,7 @@ export class MainPageComponent implements OnInit {
       status:'pending'
 
     }
-    this.http.post<any>('https://glems-backend.herokuapp.com/commander',commande)
+    this.http.post<any>(this.backendUrl+'commander',commande)
     .subscribe(
       res=>{
         this.cardList.handleShopcart()
